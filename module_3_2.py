@@ -2,7 +2,7 @@ dog = '@'
 endmail = ('.com', '.ru', '.net')
 
 def send_email(message, recipient, *, sender = 'university.help@gmail.com'):
-    if not (recipient.endswith(endmail) or sender.endswith(endmail)) or (recipient.count(dog) != 1 or sender.count(dog) != 1):
+    if not (recipient.endswith(endmail) and sender.endswith(endmail)) or (recipient.count(dog) != 1 or sender.count(dog) != 1):
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}.')
 
     elif recipient == sender:
